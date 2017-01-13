@@ -15,7 +15,7 @@ app.get('/list.json', function(req, res) {
 
 app.get('/list', function(req, res) {
   var locals =  {
-    message: 'Hello from Views',
+    message: 'Hello',
     list: list
   }
   res.render('list', locals);

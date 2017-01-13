@@ -2,17 +2,14 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Server Side Rendering</title>
+  <title>Rendering</title>
 </head>
 <body>
-
   <h1><%= message %></h1>
-  <!-- print 1 2 3 as an unordered list -->
   <ul>
-  <% list.forEach(function(n) { %>
-    <li><%= n %></li>
+  <% list.forEach(function(item) { %>
+    <li><%= item %></li>
   <% }) %>
   </ul>
-
 </body>
 </html>

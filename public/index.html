@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Client Side Rendering</title>
+  <title>Rendering</title>
   <script
   src="https://code.jquery.com/jquery-3.1.1.js"
   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
@@ -11,7 +11,7 @@
   </script>
 </head>
 <body>
-  <h1>Hello from Public</h1>
+  <h1>Hello</h1>
   <template id="list">
     <ul>
       {{#each list}}
@@ -20,19 +20,18 @@
     </ul>
   </template>
   <script>
-$.get('/list.json', function(res) {
-  // var list = res.data.list;
-  var html = render('#list', { list: res.data.list });
-  $('body').append(html);
-});
+    $.get('/list.json', function(res) {
+      var locals = { list: res.data.list };
+      var html = render('#list', locals);
+      $('body').append(html);
+    });
 
-function render(id, locals) {
-  var htmlTemplate = $(id).html();
-  var renderTemplate = Handlebars.compile(htmlTemplate);
-  var html = renderTemplate(locals);
-  return html;
-}
-
+    function render(id, locals) {
+      var htmlTemplate = $(id).html();
+      var renderTemplate = Handlebars.compile(htmlTemplate);
+      var html = renderTemplate(locals);
+      return html;
+    }
   </script>
 </body>
 </html>
