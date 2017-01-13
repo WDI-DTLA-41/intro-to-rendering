@@ -3,14 +3,14 @@
 
 # What's the difference?
 
-Request a flat file and have the server send it back
+11ms - Request a flat file and have the server send it back
 ![:static](/assets/file.png)
 
-Request the page, then request data via ajax and render on the client.
-![:client](/assets/client.png)
-
-Requst the page, have the server render a response and send it down.
+18ms - Requst the page, have the server render a response and send it down.
 ![:server](/assets/server.png)
+
+148ms - Request the page, then request data via ajax and render on the client.
+![:client](/assets/client.png)
 
 # Templating Options
 
